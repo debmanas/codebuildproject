@@ -4,14 +4,15 @@ phases:
   install:
     commands:
       - echo Nothing to do in the pre_build phase..
-      - aws iam create-policy --policy-name cba-demo --policy-document file://s3creation.json
+      - aws --version
+      
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase..
   build:
     commands:
       - echo Build started on 'date'
-      - 
+      - aws iam create-policy --policy-name cba-demo --policy-document file://s3creation.json
   post_build:
     commands:
       - echo Build completed on 'date' 
