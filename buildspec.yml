@@ -1,0 +1,26 @@
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the pre_build phase..
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase..
+  build:
+    commands:
+      - echo Build started on 'date'
+      - sudo apt-get update
+      - sudo apt-get install awscli
+  post_build:
+    commands:
+      - echo Build completed on 'date'
+      - mkdir policy
+      - cd policy
+      - aws s3 cp bucket
+      name .
+      - aws iam create-policy --policy-name cba-demo --policy-document file://policy/s3creation.json
+artifacts:
+  files:
+    - 'target/ccdemo.zip'
+    
+
+    
