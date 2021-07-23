@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - echo Nothing to do in the pre_build phase..
-      - sudo apt-get install awscli
       - aws iam create-policy --policy-name cba-demo --policy-document file://s3creation.json
   pre_build:
     commands:
