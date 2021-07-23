@@ -13,8 +13,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on 'date'
-      
-    - aws iam create-policy --policy-name cba-demo --policy-document file://s3creation.json
+      - aws iam create-policy --policy-name cba-demo --policy-document file://s3creation.json
 artifacts:
   files:
     - 'target/ccdemo.zip'
